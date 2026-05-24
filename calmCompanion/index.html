@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmCompanion | Superhero Mental Health Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="parent-mode.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>CalmCompanion</span>
+            </div>
+            <p class="tagline">An inclusive mental health hub for children of all abilities</p>
+            <div class="points-display">
+                <i class="fas fa-star"></i> <span id="points-count">0</span> Super Points
+            </div>
+            <div class="header-icons">
+                <div class="header-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="header-icon"><i class="fas fa-fist-raised"></i></div>
+                <div class="header-icon"><i class="fas fa-mask"></i></div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="nav-item active" data-screen="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item" data-screen="superhero">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Superhero Tools</span>
+                </div>
+                <div class="nav-item" data-screen="emotions">
+                    <i class="fas fa-smile"></i>
+                    <span>Emotion Translator</span>
+                </div>
+                <div class="nav-item" data-screen="calm-tools">
+                    <i class="fas fa-spa"></i>
+                    <span>Calm Tools</span>
+                </div>
+                <div class="nav-item" data-screen="connection">
+                    <i class="fas fa-users"></i>
+                    <span>Connection Space</span>
+                </div>
+                <div class="nav-item" data-screen="progress">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Progress Galaxy</span>
+                </div>
+                <div class="nav-item" data-screen="parent-mode">
+        <i class="fas fa-user-shield"></i>
+        <span>Parent Mode</span>
+    </div>
+            </div>
+
+            <div class="content-area">
+                <!-- Home Screen -->
+                <div class="screen active" id="home-screen">
+                    <h2>Welcome to CalmCompanion</h2>
+                    <p>Your all-in-one digital hub designed to support the mental health and emotional wellbeing of children with all abilities.</p>
+                    
+                    <div class="level-container">
+                        <div class="level-badge" id="level-badge">1</div>
+                        <div class="level-progress">
+                            <div class="level-progress-bar" id="level-progress-bar" style="width: 25%"></div>
+                        </div>
+                        <div class="level-info" id="level-info">Level 1 (25%)</div>
+                    </div>
+                    
+                    <div class="daily-challenge">
+                        <div class="challenge-title">
+                            <i class="fas fa-trophy challenge-icon"></i>
+                            <span>Today's Super Challenge</span>
+                        </div>
+                        <p id="daily-challenge-text">Complete 3 emotional check-ins to earn your Calm Cape!</p>
+                        <div class="controls">
+                            <button class="accent" id="start-challenge-btn">
+                                <i class="fas fa-play"></i>
+                                Start Challenge
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="superhero-container">
+                        <h3>Meet Your Superhero Companion</h3>
+                        <div class="superhero-display">
+                            <div class="superhero" id="superhero">🦸</div>
+                            <div class="superhero-power" style="top: 50px; left: 50px;">✨</div>
+                            <div class="superhero-power" style="top: 100px; right: 70px;">🌟</div>
+                            <div class="superhero-power" style="bottom: 80px; left: 90px;">💫</div>
+                        </div>
+                        
+                        <div class="superhero-message" id="superhero-message">
+                            Hello Super Friend! I'm here to help you become an Emotion Hero! Use my special tools to build your superpowers!
+                        </div>
+                        
+                        <div class="controls">
+                            <button id="superhero-tip-btn">
+                                <i class="fas fa-lightbulb"></i>
+                                Get Super Tip
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-container">
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-smile"></i>
+                                </div>
+                                <h3 class="tool-title">Emotion Translator</h3>
+                            </div>
+                            <p>Express your feelings through emojis, colors, or words. Our system understands and responds with empathy.</p>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="secondary" id="explore-emotions">
+                                    <i class="fas fa-rocket"></i>
+                                    Explore Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <h3 class="tool-title">Calming Tools</h3>
+                            </div>
+                            <p>Access a variety of interactive tools to help regulate emotions and find peace during challenging moments.</p>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="secondary" id="explore-tools">
+                                    <i class="fas fa-rocket"></i>
+                                    Explore Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3 class="tool-title">Safe Connection</h3>
+                            </div>
+                            <p>Connect with peers in a moderated, safe environment using avatar-based communication.</p>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="secondary" id="explore-connection">
+                                    <i class="fas fa-rocket"></i>
+                                    Explore Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3 class="tool-title">Progress Galaxy</h3>
+                            </div>
+                            <p>Celebrate achievements and track emotional growth with our visual progress galaxy.</p>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="secondary" id="explore-progress">
+                                    <i class="fas fa-rocket"></i>
+                                    Explore Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Superhero Tools Screen -->
+                <div class="screen" id="superhero-screen">
+                    <h2>Superhero Tools</h2>
+                    <p>Use these special superhero tools to build your emotional superpowers!</p>
+                    
+                    <div class="superhero-container">
+                        <div class="superhero-display">
+                            <div class="superhero" id="main-superhero">🦸</div>
+                            <div class="superhero-power" style="top: 50px; left: 50px;">✨</div>
+                            <div class="superhero-power" style="top: 100px; right: 70px;">🌟</div>
+                            <div class="superhero-power" style="bottom: 80px; left: 90px;">💫</div>
+                        </div>
+                        
+                        <div class="superhero-message" id="main-superhero-message">
+                            Hello Super Friend! I'm Calm Crusader! Choose a tool to help you with your emotions.
+                        </div>
+                        
+                        <div class="superhero-tools">
+                            <div class="power-card" data-tool="breath">
+                                <div class="power-icon">🌀</div>
+                                <div class="power-title">Calm Breath</div>
+                                <p>Deep breathing exercises</p>
+                            </div>
+                            
+                            <div class="power-card" data-tool="strength">
+                                <div class="power-icon">💪</div>
+                                <div class="power-title">Emotion Strength</div>
+                                <p>Build resilience to big feelings</p>
+                            </div>
+                            
+                            <div class="power-card" data-tool="vision">
+                                <div class="power-icon">👁️</div>
+                                <div class="power-title">Focus Vision</div>
+                                <p>Improve concentration skills</p>
+                            </div>
+                            
+                            <div class="power-card" data-tool="shield">
+                                <div class="power-icon">🛡️</div>
+                                <div class="power-title">Calm Shield</div>
+                                <p>Protect against overwhelming feelings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emotion Translator -->
+                <div class="screen" id="emotions-screen">
+                    <h2>Emotion Translator</h2>
+                    <p>Select how you're feeling today. We'll help you understand and manage your emotions.</p>
+                    
+                    <div class="emotion-grid">
+                        <div class="emotion-card" data-emotion="happy">
+                            <div class="emotion-emoji">😊</div>
+                            <div class="emotion-name">Happy</div>
+                        </div>
+                        <div class="emotion-card" data-emotion="calm">
+                            <div class="emotion-emoji">😌</div>
+                            <div class="emotion-name">Calm</div>
+                        </div>
+                        <div class="emotion-card" data-emotion="sad">
+                            <div class="emotion-emoji">😢</div>
+                            <div class="emotion-name">Sad</div>
+                        </div>
+                        <div class="emotion-card" data-emotion="excited">
+                            <div class="emotion-emoji">🤩</div>
+                            <div class="emotion-name">Excited</div>
+                        </div>
+                        <div class="emotion-card" data-emotion="angry">
+                            <div class="emotion-emoji">😠</div>
+                            <div class="emotion-name">Angry</div>
+                        </div>
+                        <div class="emotion-card" data-emotion="scared">
+                            <div class="emotion-emoji">😨</div>
+                            <div class="emotion-name">Scared</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-container" id="emotion-response" style="display: none;">
+                        <h3 id="response-title">We see you're feeling <span id="emotion-display">Happy</span></h3>
+                        <p id="response-text">It's wonderful that you're feeling happy! Would you like to celebrate this feeling with a fun activity?</p>
+                        <div class="controls">
+                            <button id="suggest-activity-btn">
+                                <i class="fas fa-lightbulb"></i>
+                                Suggest Activity
+                            </button>
+                            <button class="secondary" id="change-emotion-btn">
+                                <i class="fas fa-redo"></i>
+                                Change Emotion
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-suggestions" id="activity-suggestions">
+                        <div class="activity-icon" id="activity-icon">🎨</div>
+                        <h3 class="activity-title" id="activity-title">Create a Joyful Drawing</h3>
+                        <p id="activity-description">Draw something that makes you happy - it could be a sunny day, your favorite animal, or a fun memory!</p>
+                        <div class="controls" style="justify-content: center; margin-top: 15px;">
+                            <button class="accent" id="complete-activity-btn">
+                                <i class="fas fa-check"></i>
+                                I did it!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calm Tools -->
+                <div class="screen" id="calm-tools-screen">
+                    <h2>Calming Tools</h2>
+                    <p>Choose an activity to help you feel centered and peaceful.</p>
+                    
+                    <div class="tools-container">
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h3 class="tool-title">Bubble Breathing</h3>
+                            </div>
+                            <p>Follow the expanding and contracting bubble to regulate your breathing and calm your mind.</p>
+                            
+                            <div class="bubble-container">
+                                <div class="bubble" id="breathing-bubble">
+                                    Breathe
+                                </div>
+                            </div>
+                            
+                            <div class="controls">
+                                <button id="start-breathing-btn">
+                                    <i class="fas fa-play"></i>
+                                    Start
+                                </button>
+                                <button id="pause-breathing-btn">
+                                    <i class="fas fa-pause"></i>
+                                    Pause
+                                </button>
+                                <button class="secondary" id="reset-breathing-btn">
+                                    <i class="fas fa-sync"></i>
+                                    Reset
+                                </button>
+                            </div>
+                            <div class="streak-display" style="margin-top: 15px;">
+                                <i class="fas fa-fire"></i> Current streak: <span id="breathing-streak">0</span> days
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <h3 class="tool-title">Sound Therapy</h3>
+                            </div>
+                            <p>Choose from a variety of calming sounds to create your peaceful environment.</p>
+                            
+                            <div style="margin: 30px 0;">
+    <div class="controls" style="display: flex; justify-content: center;">
+      <!-- Audio elements -->
+      <audio id="ocean" src="calm.mp3"></audio>
+      <audio id="forest" src="forest-lullaby-110624.mp3"></audio>
+
+      <!-- Buttons -->
+      <button onclick="playSound('ocean')" class="secondary sound-btn">
+        <i class="fas fa-water"></i> Ocean
+      </button>
+
+      <button onclick="playSound('forest')" class="secondary sound-btn">
+        <i class="fas fa-tree"></i> Forest
+      </button>
+    </div>
+    
+  </div>
+                            
+                            <div class="controls">
+                                <button id="start-sound-btn">
+                                    <i class="fas fa-play"></i>
+                                    Play Sound
+                                </button>
+                                <button id="stop-sound-btn">
+                                    <i class="fas fa-stop"></i>
+                                    Stop
+                                </button>
+                            </div>
+                            
+                            <div style="margin-top: 20px; text-align: center; display: none;" id="sound-playing">
+                                <i class="fas fa-volume-up"></i> 
+                                <span id="current-sound">Ocean sounds playing</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <h3 class="tool-title">Focus Game</h3>
+                            </div>
+                            <p>Match the pairs to practice focus and memory skills. Complete all pairs to earn points!</p>
+                            
+                            <div id="memory-game" style="margin: 30px auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 300px;">
+                                <!-- Memory cards will be generated here -->
+                            </div>
+                            
+                            <div class="controls">
+                                <button class="accent" id="start-game-btn">
+                                    <i class="fas fa-play-circle"></i>
+                                    Start Game
+                                </button>
+                                <button id="reset-game-btn">
+                                    <i class="fas fa-redo"></i>
+                                    Reset
+                                </button>
+                            </div>
+                            <div class="points-display" style="margin-top: 15px; background: rgba(126, 211, 33, 0.1);">
+                                <i class="fas fa-coins"></i> Game points: <span id="game-points">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connection -->
+                <div class="screen" id="connection-screen">
+                    <h2>Connection Space</h2>
+                    <p>Connect with friends in a safe, supportive environment.</p>
+                    
+                    <div class="connection-container">
+                        <div>
+                            <h3 style="margin-bottom: 20px;">Available Friends</h3>
+                            <div class="avatar-grid" id="friends-list">
+                                <!-- Friends populated by JS -->
+                            </div>
+                        </div>
+                        
+                        <div class="chat-container">
+                            <div class="chat-header">
+                                <div class="chat-avatar" id="current-avatar">👧</div>
+                                <div class="chat-title" id="current-friend">Chat with Maya</div>
+                            </div>
+                            
+                            <div class="chat-window" id="chat-window">
+                                <!-- Messages populated by JS -->
+                            </div>
+                            
+                            <div class="message-input-area">
+                                <input type="text" class="message-input" id="message-input" placeholder="Type a message...">
+                                <button id="send-message-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="sticker-picker">
+                                <div class="sticker" title="Send a happy sticker">😊</div>
+                                <div class="sticker" title="Send a calm sticker">😌</div>
+                                <div class="sticker" title="Send a supportive sticker">👍</div>
+                                <div class="sticker" title="Send a heart sticker">❤️</div>
+                                <div class="sticker" title="Send a star sticker">⭐</div>
+                                <div class="sticker" title="Send a superhero sticker">🦸</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress -->
+                <div class="screen" id="progress-screen">
+                    <h2>Your Progress Galaxy</h2>
+                    <p>Celebrate your emotional growth journey with stars and achievements!</p>
+                    
+                    <div class="points-display" style="margin-bottom: 20px; background: rgba(74, 144, 226, 0.1);">
+                        <i class="fas fa-star"></i> Total points: <span id="total-points">0</span>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="stats-card">
+                            <h3>Your Stats</h3>
+                            
+                            <div class="stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-smile"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Emotions Recognized</h3>
+                                    <p id="emotion-count">0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Calm Tools Used</h3>
+                                    <p id="tool-count">0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Connections Made</h3>
+                                    <p id="connection-count">0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Achievements Earned</h3>
+                                    <p id="achievement-count">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3>Your Achievements</h3>
+                            <div class="achievements" id="achievements-container">
+                                <!-- Achievements populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Parent Mode Screen -->
+    <div class="screen" id="parent-mode-screen">
+        <h2>Parent Mode</h2>
+        <p>Monitor your child's progress and customize their experience.</p>
+        
+        <div class="parent-dashboard">
+            <div class="parent-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Emotion Check-ins</h3>
+                        <p id="emotion-checkins">0</p>
+                    </div>
+                </div>
+                
+                <div class="parent-dashboard">
+    <div class="parent-stats">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-smile"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Emotion Check-ins</h3>
+                <p id="emotion-checkins">0</p>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-spa"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Tools Used</h3>
+                <p id="tools-used">0</p>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Super Points</h3>
+                <p id="child-points">0</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-list" id="activity-list">
+            <div class="empty-state">
+                <i class="fas fa-info-circle"></i>
+                <p>Your child's activities will appear here</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="parent-settings">
+        <h3>Parental Controls</h3>
+        
+        <div class="setting-item">
+            <div class="setting-header">
+                <label for="time-limit-toggle">Time Limit</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="time-limit-toggle">
+                    <span class="slider"></span>
+                </div>
+            </div>
+            <div class="setting-details" id="time-limit-details" style="display: none;">
+                <div class="slider-container">
+                    <label>Maximum <span id="time-limit-value">30</span> minutes per day</label>
+                    <input type="range" id="time-limit-slider" min="10" max="120" value="30" step="5">
+                </div>
+            </div>
+        </div>
+        
+        <div class="setting-item">
+            <div class="setting-header">
+                <label for="content-filter-toggle">Content Filter</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="content-filter-toggle">
+                    <span class="slider"></span>
+                </div>
+            </div>
+            <p class="setting-description">Filter potentially sensitive content</p>
+        </div>
+        
+        <div class="setting-item">
+            <div class="setting-header">
+                <label for="progress-sharing">Progress Sharing</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="progress-sharing" checked>
+                    <span class="slider"></span>
+                </div>
+            </div>
+            <p class="setting-description">Share progress with therapists/teachers</p>
+        </div>
+        
+        <div class="controls">
+            <button class="accent" id="save-settings">
+                <i class="fas fa-save"></i>
+                Save Settings
+            </button>
+            <button class="secondary" id="view-full-report">
+                <i class="fas fa-chart-bar"></i>
+                View Full Report
+            </button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div> <!-- Closing tag for content-area -->
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="accessibility-bar">
+            <button class="accessibility-btn" id="contrast-toggle">
+               
+                <i class="fas fa-adjust"></i>
+                <p style="color: #3a86ff; font-size: 16px;"> High Contrast</p>
+
+               
+            </button>
+            <button class="accessibility-btn" id="font-toggle">
+                <i class="fas fa-font"></i>
+                 <p style="color: #3a86ff; font-size: 16px;"> Dyslexic Font</p>
+                
+            </button>
+            <button class="accessibility-btn" id="zoom-in">
+                <i class="fas fa-search-plus"></i>
+                <p style="color: #3a86ff; font-size: 16px;"> Zoom In</p>
+                
+            </button>
+            <button class="accessibility-btn" id="zoom-out">
+                <i class="fas fa-search-minus"></i>
+                <p style="color: #3a86ff; font-size: 16px;">  Zoom Out</p>
+               
+            </button>
+        </div>
+    </div>
+
+    <!-- Tool Animation Container -->
+    <div class="tool-animation" id="tool-animation">
+        <div class="tool-animation-content">
+            <button class="tool-animation-close" id="tool-animation-close">×</button>
+            <div class="tool-animation-icon" id="tool-animation-icon">🌀</div>
+            <div class="tool-animation-text" id="tool-animation-text">Take deep breaths to calm your mind</div>
+        </div>
+    </div>
+
+    <!-- Floating Superhero Button -->
+    <div class="superhero-floating" id="floating-superhero">
+        🦸
+    </div>
+
+ <div class="emotion-detector">
+  <h3>Mood Detection</h3>
+  <div id="emotion-result" class="emotion-result">Loading emotion detection...</div>
+  <div id="confidence" class="confidence"></div>
+  <video id="emotion-video" class="hidden-video" autoplay muted playsinline></video>
+</div>
+
+
+
+<script src="emotion-detector.js"></script>
+    <script src="script.js"></script>
+    <!-- Load the component -->
+     <script src="sound.js"></script>
+
+
+
+</body>
+</html>
